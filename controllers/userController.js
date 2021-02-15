@@ -14,10 +14,12 @@ module.exports = {
     let password = req.body.password;
 
     if (email == null || email == '' || password == null || password == '') {
+      res.statusCode = 400;
       res.json({ msg: 'please write your email and password' });
     } else {
       await userModel.login(email, (r) => {
         if (r == false) {
+          res.statusCode = 400;
           res.json({ msg: 'your email or password are wrong' });
         } else {
           r.map((data) => {
