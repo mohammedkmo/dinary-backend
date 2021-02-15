@@ -5,12 +5,17 @@ const port = 3000;
 require('dotenv').config();
 
 const userRoute = require('./routes/userRoute');
-
+const pricesRoute = require('./routes/priceRoute');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
-
+app.get('/', (req, res) => {
+  res.json({
+    msg: 'this is dinary API',
+  });
+});
+app.use('/prices', pricesRoute);
 app.use('/user', userRoute);
 
 app.listen(port);
