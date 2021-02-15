@@ -18,4 +18,5 @@ app.get('/', (req, res) => {
 app.use('/prices', pricesRoute);
 app.use('/user', userRoute);
 
+
 app.listen(port);
