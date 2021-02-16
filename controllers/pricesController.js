@@ -32,4 +32,11 @@ module.exports = {
       }
     });
   },
+  getLast: async(req,res) =>{
+    pricesModel.getLast((r)=>{
+      res.json({
+        data: r,
+      })
+    })
+  }
 };

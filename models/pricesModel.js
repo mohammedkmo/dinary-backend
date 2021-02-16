@@ -24,3 +24,14 @@ exports.post = async (data, callback) => {
     }
   );
 };
+
+exports.getLast = async(callback)=>{
+  const q = 'SELECT * FROM prices ORDER BY id DESC LIMIT 1'
+
+  await conn.query(q,(err,result,fields)=>{
+    if (err) throw err
+
+    return callback(result)
+  })
+
+}
