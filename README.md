@@ -1,6 +1,6 @@
 # Dinary backend
 
-this is my persunal project put i put it public just in case someone want to make same idea
+this is my personal project but i decided put it in public just in case someone want to make same idea
 
 ## Introduction
 
