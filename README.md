@@ -6,6 +6,21 @@ this is my personal project but i decided put it in public just in case someone 
 
 Dinary is a mobile application that allow iraqi people to exchange iraqi dinar to other Currencies and versa.
 
+## Usage
+
+to get `full` prices visit
+
+```bash
+https://api.dinary.net/prices
+```
+
+to get `last` prices visit
+
+```bash
+https://api.dinary.net/prices/last
+```
+
+
 ## Installation
 
 Clone the repository
