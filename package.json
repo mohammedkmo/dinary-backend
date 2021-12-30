@@ -2,9 +2,9 @@
   "name": "dinary-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "functions/server.js",
   "scripts": {
-    "build": "netlify-lambda build express",
+    "build": "netlify-lambda build src",
     "start": "nodemon server-local.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

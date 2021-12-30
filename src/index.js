@@ -5,8 +5,8 @@ require('dotenv').config();
 const serverless = require('serverless-http');
 
 const router = express.Router();
-const userRoute = require('./src/routes/userRoute');
-const pricesRoute = require('./src/routes/priceRoute');
+const userRoute = require('./routes/userRoute');
+const pricesRoute = require('./routes/priceRoute');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
