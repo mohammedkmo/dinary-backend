@@ -4,7 +4,7 @@ const app = express();
 require('dotenv').config();
 const serverless = require('serverless-http');
 
-
+const router = express.Router();
 const userRoute = require('./src/routes/userRoute');
 const pricesRoute = require('./src/routes/priceRoute');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -26,6 +26,8 @@ app.get('/', (req, res) => {
 });
 app.use('/prices', pricesRoute);
 app.use('/user', userRoute);
+
+app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 
 module.exports = app;
