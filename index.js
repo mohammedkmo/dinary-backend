@@ -1,8 +1,9 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
-const port = 4000;
 require('dotenv').config();
+const serverless = require('serverless-http');
+
 
 const userRoute = require('./src/routes/userRoute');
 const pricesRoute = require('./src/routes/priceRoute');
@@ -27,4 +28,5 @@ app.use('/prices', pricesRoute);
 app.use('/user', userRoute);
 
 
-app.listen(port);
+module.exports = app;
+module.exports.handler = serverless(app);
