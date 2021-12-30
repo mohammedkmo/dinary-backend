@@ -1,10 +1,10 @@
-const pricesModel = require('../models/pricesModel');
+const pricesModel = require("../models/pricesModel");
 
 module.exports = {
-  get: async (req, res) => {
+  get: (req, res) => {
     pricesModel.get((r) => {
       res.json({
-        data: r,
+        data: r
       });
     });
   },
@@ -22,21 +22,21 @@ module.exports = {
     pricesModel.post(data, (r) => {
       if (r) {
         res.json({
-          msg: 'prices added',
+          msg: "prices added",
         });
       } else {
         res.statusCode = 400;
         res.json({
-          msg: 'there was something wrong',
+          msg: "there was something wrong",
         });
       }
     });
   },
-  getLast: async(req,res) =>{
-    pricesModel.getLast((r)=>{
+  getLast: async (req, res) => {
+    pricesModel.getLast((r) => {
       res.json({
         data: r,
-      })
-    })
-  }
+      });
+    });
+  },
 };

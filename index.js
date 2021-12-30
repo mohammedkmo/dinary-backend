@@ -4,8 +4,8 @@ const app = express();
 const port = 4000;
 require('dotenv').config();
 
-const userRoute = require('./routes/userRoute');
-const pricesRoute = require('./routes/priceRoute');
+const userRoute = require('./src/routes/userRoute');
+const pricesRoute = require('./src/routes/priceRoute');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
