@@ -2,16 +2,17 @@
   "name": "dinary-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "functions/server.js",
+  "main": "index.js",
   "scripts": {
-    "build": "netlify-lambda build express",
-    "start": "nodemon server-local.js",
+    "build": "./node_modules/.bin/netlify-lambda build express",
+    "start": "./node_modules/.bin/netlify-lambda serve express",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.1048.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

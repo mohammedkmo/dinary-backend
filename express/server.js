@@ -3,10 +3,11 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const serverless = require('serverless-http');
-
+const authUser = require('./middlewares/auth')
 const router = express.Router();
-const userRoute = require('./routes/userRoute');
-const pricesRoute = require('./routes/priceRoute');
+
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
@@ -19,16 +20,22 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.json({
     msg: 'this is dinary API',
   });
 });
-app.use('/prices', pricesRoute);
-app.use('/user', userRoute);
+
+router.get('/prices',require('./controllers/pricesController').get)
+router.post('/prices/new',authUser,require('./controllers/pricesController').post)
+router.get('/prices/last',require('./controllers/pricesController').getLast)
+
+
+router.get('/users',require('./controllers/userController').get)
+router.post('/users/login',require('./controllers/userController').post)
+router.patch('/users/update',require('./controllers/userController').patch)
 
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 
-module.exports = app;
 module.exports.handler = serverless(app);

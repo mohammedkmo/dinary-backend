@@ -3,11 +3,11 @@ const mongoose = require("../database/connection");
 const Schema = mongoose.Schema;
 
 const pricesSchema = new Schema({
-  usd: mongoose.Types.Decimal128,
-  eur: mongoose.Types.Decimal128,
-  gold: mongoose.Types.Decimal128,
-  irr: mongoose.Types.Decimal128,
-  try: mongoose.Types.Decimal128,
+  usd: mongoose.SchemaTypes.Decimal128,
+  eur: mongoose.SchemaTypes.Decimal128,
+  gold: mongoose.SchemaTypes.Decimal128,
+  irr: mongoose.SchemaTypes.Decimal128,
+  try: mongoose.SchemaTypes.Decimal128,
   date: Date,
 });
 

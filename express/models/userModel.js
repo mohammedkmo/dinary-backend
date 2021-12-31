@@ -3,9 +3,9 @@ const mongoose = require("../database/connection");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  name: String,
-  email: String,
-  password: String,
+  name: mongoose.SchemaTypes.String,
+  email: mongoose.SchemaTypes.String,
+  password: mongoose.SchemaTypes.String,
 });
 exports.login = async (email, callback) => {
   mongoose
