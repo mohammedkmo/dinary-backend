@@ -31,9 +31,6 @@ router.post('/prices/new',authUser,require('./controllers/pricesController').pos
 router.get('/prices/last',require('./controllers/pricesController').getLast)
 
 
-router.get('/users',require('./controllers/userController').get)
-router.post('/users/login',require('./controllers/userController').post)
-router.patch('/users/update',require('./controllers/userController').patch)
 
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
