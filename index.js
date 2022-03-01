@@ -5,6 +5,7 @@ require('dotenv').config();
 const authUser = require('./src/middlewares/auth')
 const pricesController = require('./src/controllers/pricesController')
 const port = process.env.PORT || 3000;
+const userController = require('./src/controllers/userController')
 
 
 
@@ -29,7 +30,9 @@ app.get('/', (req, res) => {
 app.get('/prices',pricesController.get)
 app.post('/prices/new',authUser,pricesController.post)
 app.get('/prices/last',pricesController.getLast)
-
+app.post('/user/login',userController.post)
+app.post('/user/update',userController.patch)
+app.get('/user/users',userController.get)
 
 
 app.listen(port, (()=> console.log(`listening on port ${port}`)));
